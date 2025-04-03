@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'templates/css/styles.css' %}">
+    <title>{% block title %}Course{% endblock %}</title>
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+    <div class="navBar">
+        <nav>
+            <ul>
+                <li><a href="/" class="link">Home</a></li>
+                <li><a href="/catalog" class="link">Catalog</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/cart" class="link"> Cart </a></li>
+                    <li><a href="/profile" class="link">Profile</a></li>
+                    <li><a href="{% url 'logout' %}" class="link">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="link">Login</a></li>
+                    <li><a href="{% url 'register' %}" class="link">Register</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li><a href="/admin" class="link">Admin</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+    {% block content %}
+    <h1 class="welcome">Практическая и курсовая работа.<br>Домашняя страница</h1>
+    {% endblock %}
+    
+</body>
+</html>

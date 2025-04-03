@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<div class="profile">
+
+    <h2>Профиль пользователя</h2><br>
+
+    <div class="info">
+
+        <p><strong>Имя:</strong> {{ user.username }}</p>
+
+        <p><strong>Email:</strong> {{ user.email }}</p>
+
+        <p><strong>Телефон:</strong> {{ profile.phone_number }}</p>
+
+        <p><strong>GitHub:</strong> <a href="{{ profile.github_url }}" target="_blank">{{ profile.github_url }}</a></p>
+
+        <p><strong>Адрес:</strong> {{ profile.address }}</p>
+
+    </div>
+    <br>
+    <button class="btn"><a href="{% url 'edit_profile' %}">Редактировать профиль</a></button>
+
+</div>
+
+{% endblock %}

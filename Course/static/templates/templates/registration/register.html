@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block title %} Registration {% endblock %}
+
+{% block content %}
+<form method="POST" novalidate class="edit_profile">
+    {% csrf_token %}
+
+    <h2>Регистрация</h2><br>
+
+    <div class="formFields">
+        {% for field in form %}
+        <div>
+            {{field.label_tag}}
+            <div class="field" style="height: 35px;">{{field}}</div>
+        </div>
+        {% endfor %}
+    </div>
+        <button type="submit" class="btn">Register</button>
+
+</form>
+
+
+{% endblock %}
