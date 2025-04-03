@@ -3,16 +3,16 @@
 {% block title %} Registration {% endblock %}
 
 {% block content %}
-<form method="POST" novalidate class="edit_profile">
+<form method="POST" novalidate class="register">
     {% csrf_token %}
 
     <h2>Регистрация</h2><br>
 
-    <div class="formFields">
+    <div>
         {% for field in form %}
-        <div>
+        <div class="formFields">
             {{field.label_tag}}
-            <div class="field" style="height: 35px;">{{field}}</div>
+            {{field}}
         </div>
         {% endfor %}
     </div>

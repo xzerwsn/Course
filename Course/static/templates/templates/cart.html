@@ -71,7 +71,7 @@
         <div class="product-item">
             <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="200" height="150">
             <p>{{ item.product.name }} ({{ item.quantity }})</p>
-            <p>Price: {{ item.product.price }}₽</p>
+            <p class="price">Price: {{ item.product.price }}₽</p>
             <a href="{% url 'cart:remove_from_cart' item.id %}" class="buy-now-button">Remove</a>
         </div>
         {% empty %}
@@ -79,7 +79,7 @@
         {% endfor %}
     </div>
     <div class="text">
-        <p>Total Price: {{ total_price }}₽</p>
+        <p class="price">Total Price: {{ total_price }}₽</p>
 
         <a href="{% url 'cart:product_list' %}" class="buy-now-button">Continue Shopping</a>
     </div>

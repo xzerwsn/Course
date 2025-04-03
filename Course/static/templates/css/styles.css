@@ -79,6 +79,7 @@ a {
     font-family: "Roboto Slab", serif;
     background-color: #b19297;
     color: #fff;
+    font-size: 18px;
     text-decoration: none;
 
     max-width: 50%;
@@ -105,4 +106,43 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.register, .login {
+    font-family: "Roboto Slab", serif;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formFields {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.price {
+    font-family: "Roboto Slab", serif;
+    color: #98E2AD;
+    font-size: 24px;
 }

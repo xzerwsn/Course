@@ -4,16 +4,16 @@
 
 {% block content %}
 
-<form method="POST" novalidate class="edit_profile">
+<form method="POST" novalidate class="login">
     {% csrf_token %}
 
     <h2>Вход</h2><br>
 
-    <div class="formFields">
+    <div>
         {% for field in form %}
-        <div>
+        <div class="formFields">
             {{field.label_tag}}
-            <div class="field">{{field}}</div>
+            {{field}}
         </div>
         {% endfor %}
     </div>
