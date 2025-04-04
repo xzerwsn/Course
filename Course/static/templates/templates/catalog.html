@@ -1,61 +1,18 @@
 {% extends "index.html" %}
 {% block title %} Catalog {% endblock %}
 
-{% block head %}
-    <style>
-        .product-list {
-            font-family: "Roboto Slab", serif;
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: center; 
-            flex-direction: row;
-            align-items: center;
-            list-style: none;
-            object-fit: cover;
-            padding: 25px;
-        }
-
-        .product-item {
-            display: flex;
-            flex-wrap: wrap; 
-            max-width: 25%;
-            height: 60%;
-            margin: 10px;
-            color: #fff;
-            padding: 10px;
-            justify-content: space-between;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .buy-now-button {
-            display: flex;
-            flex-direction: column;
-
-            background-color: #b19297;
-            color: #fff;
-            text-decoration: none;
-
-            margin-top: 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-
-    </style>
-{% endblock %}
-
 {% block content %}
     <ul class="product-list">
         {% for product in products %}
             <li class="product-item">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200" height="150">
-                <h2>{{ product.name }}</h2>
-                <p>{{ product.description }}</p>
-                <p class="price">Price: {{ product.price }}₽</p>
-                <a href="#" class="buy-now-button">Buy Now</a>
-                <a class="buy-now-button" href="{% url 'cart:add_to_cart' product.id %}">Add to Cart</a>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" width="200" height="150">
+                <div class="product-info"></div>
+                    <h2>{{ product.name }}</h2>
+                    <p>{{ product.description }}</p>
+                    <p class="price">{{ product.price }}₽</p>
+                </div>
+                <a href="#" class="buy-now-button">Купить сейчас</a>
+                <a class="buy-now-button" href="{% url 'cart:add_to_cart' product.id %}">Добавить в корзину</a>
             </li>
         {% endfor %}
     </ul>

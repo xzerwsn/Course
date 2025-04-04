@@ -3,22 +3,23 @@
 {% block title %} Login {% endblock %}
 
 {% block content %}
+<div class="container">
+    <form method="POST" novalidate class="login">
+        {% csrf_token %}
 
-<form method="POST" novalidate class="login">
-    {% csrf_token %}
+        <h2>Вход</h2><br>
 
-    <h2>Вход</h2><br>
-
-    <div>
-        {% for field in form %}
-        <div class="formFields">
-            {{field.label_tag}}
-            {{field}}
+        <div>
+            {% for field in form %}
+            <div class="formFields">
+                {{field.label_tag}}
+                {{field}}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-        <button type="submit" class="btn">Login</button>
+            <button type="submit" class="buy-now-button">Login</button>
 
-</form>
+    </form>
+</div>
     
 {% endblock %}
